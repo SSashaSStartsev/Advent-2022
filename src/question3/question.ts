@@ -1,18 +1,22 @@
+const getScore = (key: string) : number => {
+  if (key.charCodeAt(0) >= 'a'.charCodeAt(0)) {
+    return (key.charCodeAt(0) - ('a'.charCodeAt(0)-1))
+  } else {
+    return (key.charCodeAt(0) - ('A'.charCodeAt(0)-1) + 26)
+  }
+}
+
 const partA = async (input: string[]) => {
   let score = 0
 
   input.forEach(sack => {
     let firstHalf = sack.slice(0, Math.floor(sack.length/2))
     let secondHalf = sack.slice(Math.floor(sack.length/2), sack.length)
-    let diff = ''
+    let key = ''
     secondHalf.split('').forEach(element => {
-      if (firstHalf.includes(element)) diff = element
+      if (firstHalf.includes(element)) key = element
     });
-    if (diff.charCodeAt(0) >= 'a'.charCodeAt(0)) {
-      score += (diff.charCodeAt(0) - ('a'.charCodeAt(0)-1))
-    } else {
-      score += (diff.charCodeAt(0) - ('A'.charCodeAt(0)-1) + 26)
-    }
+    score += getScore(key)
     console.log(score)
   });
 
@@ -27,11 +31,7 @@ const partB = async (input: string[]) => {
     currTrio[0].split('').forEach(element => {
       if (currTrio[1].includes(element) && currTrio[2].includes(element)) key = element
     });
-    if (key.charCodeAt(0) >= 'a'.charCodeAt(0)) {
-      score += (key.charCodeAt(0) - ('a'.charCodeAt(0)-1))
-    } else {
-      score += (key.charCodeAt(0) - ('A'.charCodeAt(0)-1) + 26)
-    }
+    score += getScore(key)
   }
   return score
 }
