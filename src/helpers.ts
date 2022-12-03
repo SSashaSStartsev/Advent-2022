@@ -12,7 +12,7 @@ export const getInputNumbers = async (questionNum: number, filename: string) => 
 export const getInputStrings = async (questionNum: number, filename: string) => {
   const inputFileContent = await fs.promises.readFile(
     `./src/question${questionNum}/inputs/${filename}`, `utf8`)
-  return inputFileContent.split("\n")
+  return inputFileContent.split("\r\n")
 }
 
 export const getInputGrid = async (questionNum: number, filename: string) => {
