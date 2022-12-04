@@ -15,6 +15,12 @@ export const getInputStrings = async (questionNum: number, filename: string) => 
   return inputFileContent.split("\r\n")
 }
 
+export const getCommaSeperatedStrings = async (questionNum: number, filename: string) => {
+  return (await getInputStrings(questionNum, filename))
+  .map(line => line.split(','))
+}
+
+
 export const getInputGrid = async (questionNum: number, filename: string) => {
   return (await getInputStrings(questionNum, filename))
     .map(line => line.split(''))

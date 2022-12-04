@@ -12,7 +12,7 @@ const partA = async (input: string[]) => {
   input.forEach(sack => {
     let firstHalf = sack.slice(0, Math.floor(sack.length/2))
     let secondHalf = sack.slice(Math.floor(sack.length/2), sack.length)
-    let key = ''
+    let key = 'a'
     secondHalf.split('').forEach(element => {
       if (firstHalf.includes(element)) key = element
     });
