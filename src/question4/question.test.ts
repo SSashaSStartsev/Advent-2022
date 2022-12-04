@@ -15,7 +15,7 @@ describe('Question 4', () => {
 
   it('part B main', async () => {
     const input = await getCommaSeperatedStrings(4, "input")
-    expect(await question.partB(input)).to.equal(2548)
+    expect(await question.partB(input)).to.equal(823)
   })
 
   it('part B sample', async () => {
