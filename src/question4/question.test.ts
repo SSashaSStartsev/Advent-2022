@@ -5,7 +5,7 @@ import { getInputGrid, getInputNumbers, getCommaSeperatedStrings } from '../help
 describe('Question 4', () => {
   it('part A main', async () => {
     const input = await getCommaSeperatedStrings(4, "input")
-    expect(await question.partA(input)).to.equal(7903)
+    expect(await question.partA(input)).to.equal(431)
   })
 
   it('part A sample', async () => {
